@@ -50,4 +50,24 @@ Arrays :
 
 #### Stacks and Queues
 
-- *container* : A data structure that permits storage and retrieval of data items *independent o content* and are distinguished according to the retrieval order
+- *container* : A data structure that permits storage and retrieval of data items *independent of content* and are distinguished according to the retrieval order. 
+
+  - Stacks - support retrieval by last-in, first-out (LIFO) order. stacks are probably the right container to use when retrieval order doesn't matter at all, such as when processing batch jobs.
+
+    - push operation (`Push(x,s)`) : *Insert* item *x* at top of stack *s*
+    - pop operation (`Pop(s)`): *Return* and *Remove* the top item of stack *s*  
+
+    Example of LIFO would be when you insert food into the fridge.
+
+Implementation of [Stacks](codes/stacks.c)
+
+  - Queues - support retrieval in first in, first out (FIFO) order. Average waiting time will be the same regardless of whether FIFO or LIFO is used. The *put* and *get* operations for queues are called *enqueue* and *dequeue*
+
+#### Dictionary
+
+The *dictionary* data type permits access to data items by content. Primary operations for dictionary support are:
+
+- `Search(D,k)` - Given key `k` return pointer from the Dictionary *`D`*
+- `Insert(D,x)` - Add item `x` to the Dictionary *`D`*
+- `Delete(D,x)` - Remove item `x` from the Dictionary
+
