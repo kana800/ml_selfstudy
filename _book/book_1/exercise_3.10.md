@@ -56,4 +56,14 @@
    > - delete(k,T) - Delete the kth smallest element from T
    > - member(x,T) - Return true iff x is element of T
 
+   All the operations must take `O(log n)` time on an n-element set. If we want to insert *item x* to *set T*, we need to make sure the data structure is in the sorted order. 
    
+   [c codes](codes/question_8.c)
+   
+9. > A *concatenate* operation takes two sets `S1` and `S2`, where every key in `S1` in smaller than any key in `S2`, and merges them together. Give an algorithm to concatenate two binary search trees into one binary search tree. The worst-case running should be `O(h)`, where *h* is the maximal height  of the two trees.
+
+   Since all the elements in set `s1` is smaller than element in set `s2`. we attach the set `s2` to the minimum element of the set `s1`'s left sub-tree.
+
+   [c codes](codes/question_9.c)
+
+10. > In the *bin-packing problem*, we are given *n* metal objects, each weighing between zero and one kilogram.  Our goal is to find the smallest number of bins that will hold  *n* objects, with each bin holding one kilogram at most.
