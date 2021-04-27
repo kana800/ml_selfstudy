@@ -8,13 +8,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
-// Binary Tree Node
-struct node {
-	int data;
-	struct node *leftptr;
-	struct node *rightptr;	
-};
+#include "treeds.h"
 
 struct node* create_node(int num){
 	struct node *temp_node = malloc(sizeof(struct node));
@@ -105,7 +99,7 @@ int search(struct node *root, int data){
 		return search(root->rightptr, data);
 	}
 }
-
+/*
 int main(int argc, char *argv[]){
 	// EMPTY TREE
 	struct node* root = NULL;
@@ -117,9 +111,13 @@ int main(int argc, char *argv[]){
 	printTree(root);
 	printf("\n");
 	
-	printf("%d ",search(root, 1));
-	printf("%d ",search(root, 100));
+	//printf("%d ",search(root, 1));
+	//printf("%d ",search(root, 100));
+	Delete(root, 5);
+	printTree(root);
+	printf("\n");
 
 
 	return 0;	
 }
+*/

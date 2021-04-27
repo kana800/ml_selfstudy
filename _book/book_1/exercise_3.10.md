@@ -58,7 +58,7 @@
 
    All the operations must take `O(log n)` time on an n-element set. If we want to insert *item x* to *set T*, we need to make sure the data structure is in the sorted order. 
    
-   [c codes](codes/question_8.c)
+   [c codes](codes/treeds.c)
    
 9. > A *concatenate* operation takes two sets `S1` and `S2`, where every key in `S1` in smaller than any key in `S2`, and merges them together. Give an algorithm to concatenate two binary search trees into one binary search tree. The worst-case running should be `O(h)`, where *h* is the maximal height  of the two trees.
 
@@ -67,3 +67,33 @@
    [c codes](codes/question_9.c)
 
 10. > In the *bin-packing problem*, we are given *n* metal objects, each weighing between zero and one kilogram.  Our goal is to find the smallest number of bins that will hold  *n* objects, with each bin holding one kilogram at most.
+
+    - > Design an algorithm that implements the best-fit heuristic in `O(n log n)` time.
+
+      find the fullest bin the current object metal will fit into, hence minimising the amount of wasted space. If the object fit any bin, create a new bin if there isnt any space. 
+
+      [c codes](codes/binpackagingprob.c)
+
+    - > Implement the worst-fit heuristic, where we put the next object in the partially filled bin with the largest amount of extra room after the object is inserted.
+
+      We will be finding the right-most child if we are implementing the worst case scenario
+
+11. > Suppose that we are given a sequence of `n` values `x1,x2, .. xn` and seek to quickly answer repeated queries of the form: given *i* and *j*, find the smallest value.w
+
+    - > Design a data structure that uses  `O(n^2)` space and answers queries in `O(1)` time 
+
+      Add the elements to a list
+
+    - > Design a data structure that uses `O(n)` space and answers queries in `O(log n)` time.
+
+      Add all the elements to the binary search tree, given the pair of integers, we can find the lowest common ancestor of `xi` and `xj`.
+
+12. > Suppose you are given an input set *S* of *n* numbers, and a black box that if given any sequence of real numbers an integer *k* instantly and correctly answers whether there is a subset of input sequence whose sum is exactly *k*. Show how to use the black box *O(n)* times to find a subset of *S* that adds up to *k*. 
+
+13. > Let A[1...n] be an array of real numbers. Design an algorithm to perform any sequence of the following operations.
+
+    [c code](codes/question_13.c)
+
+14. > Extend the data structure of the previous problem to support insertions and deletions, Each element now has both a key and a value. An element is accessed by its key. The addition operation is applied to the values, but the elements are accessed by its key. The `Partial_sum` operation is different.
+
+    
