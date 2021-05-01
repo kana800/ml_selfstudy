@@ -96,4 +96,17 @@
 
 14. > Extend the data structure of the previous problem to support insertions and deletions, Each element now has both a key and a value. An element is accessed by its key. The addition operation is applied to the values, but the elements are accessed by its key. The `Partial_sum` operation is different.
 
+    [c code](question_15.c)
+15. > Design a data structure that allows one to search, insert, and delete an integer `X` in `O(1)` time
+
+    We will have two arrays `A` & `B`, `A` will store the location of the *counts* of the *data* while `B` will store the counts of the *data*. :exclamation:`B` will store a tuple `(data, count)`
     
+    Search -> Assume we are searching for value 3, we will go the 3rd index of A (which stores the index to the counts) and we will to B array and check if the `data` in tuple gives us a *data we are searching for*, if yes, we will return True. If not we will return False. 
+    
+    Insert -> Assume we are inserting 3 and its already present in the array, we will search for the value that need to be inserted, if the value if True, this means the value is present so we will increment the `count` data in the tuple, if not present, we will create a tuple and assign the value that need to be inserted as data and count to be 1.
+    
+    Delete -> We check if the value is present using `Search` if present, we will assign `NULL`  to the location of A and remove the value from `B`
+
+#### Implementation Projects 
+
+16. > Implement versions of several different dictionary data structures, such as linked list, binary trees, balanced binary search trees, and hash tables. Conduct experiments to assess the relative performance of these data structures in a simple application

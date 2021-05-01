@@ -70,7 +70,7 @@ void print(struct node*root){
 		return;
 	}
 	print(root->leftptr);
-	printf("%d ", root->data);
+	printf("[%d:%d] ", root->key,root->data);
 	print(root->rightptr);
 }
 
@@ -116,6 +116,19 @@ struct node* Delete(struct node * root, int key){
 	}
 }
 
+// Return the sum of all the elements currently in the set whose 
+// key is less than y.
+int partialSum(struct node* root, int key, int sum){
+	if (root == NULL){
+		return sum;
+	}else if (key <= root->key){
+		sum += root->key;
+		return partialSum(root->leftptr, key, sum);
+	}else{
+		return partialSum(root->rightptr, key, sum);
+	}
+}
+
 // Return True if number is memeber of Datastructure
 int search(struct node *root, int data){
 	if (root == NULL){
@@ -135,9 +148,9 @@ int main(int argc, char *argv[]){
 	
 	// insert function
 	root = insert(root,10, 1);
-	root = insert(root,11, 1);
-	root = insert(root,12, 1);
-	root = insert(root,13, 1);
+	root = insert(root,11, 2);
+	root = insert(root,12, 3);
+	root = insert(root,13, 4);
 	
 	print(root);
 	printf("\n");
@@ -148,10 +161,9 @@ int main(int argc, char *argv[]){
 	
 	print(root);
 	printf("\n");
-	// delete function
-	Delete(root,10);
+	
+	int sum = 0;
+	printf("Partial Sum is %d\n", partialSum(root,11,sum));
 
-	print(root);
-	printf("\n");
 	return 0;	
 }
