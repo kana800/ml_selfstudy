@@ -113,6 +113,45 @@
 
     codes for:
 
-    - [linked list](codes/single_linked_list.c)
+    - [Linked List](codes/single_linked_list.c)
 
+      if a singly linked list is used, where in each node a word is stored. To Insert a node we need first check if the word is already present in the linked list to check this (`isPresent`) we need to iterate through the list and compare each word. Which makes the *Insertion* to have `O(n)` time complexity. For Deletion we again need to iterate through the array, we will get `O(n)` time complexity.
     
+    - Binary tree
+    
+      Again in each node, we will be storing the word. Maybe we can try something like the **Trie** data structure. For insertion again we need to iterate through the tree to check if the word is present, if not we need to insert the word to the tree, we can decide whether to go the left or right using the first letter, get the ASCII value of the first letter and check it against the root node. 
+    
+17. > A Caesar shit is a very simple class of ciphers for secret messages. Unfortunately, they can be broken using statistical properties of English. Develop a program capable of decrypting Caesar shifts of sufficiently long texts
+
+    Thinking Process
+
+    We can perform a decryption using a simple mathematical expression, ![](https://latex.codecogs.com/png.latex?%5Cinline%20D_%7Bn%7D%28x%29%20%3D%20%28x%20-%20n%29%20%5Ctextup%7Bmod%7D%2026), And we need to substitute each letter to get the decrypted letter back, we need to figure out a way to store the encrypted words, we cant simply plug them into the **binary tree**, we can but words will get jumbled (order of the words will be different because we are comparing the letters with the root node) , If the order of the words doesn't matter, we can use the simply balanced binary tree and  decrypt the words accordingly.
+
+#### Interview Problems
+
+18. > What method would you use to look up a word in a dictionary
+
+    We can use a Binary Search, which would take `O(log n)`  time, assuming the words are in order, we can use **divide and conquer** algorithm and jump through the dictionary pretty easily. The best option would be store all the word in a Trie data structure, where leaf nodes of the tree lead to the correct word. This is would take a lot time but it would be pretty fast.
+
+19. > Imagine you have a closet full of shirts. What can you do to organize your shirts for easy retrieval
+
+    We can organize them by color or size and do a binary search.
+
+20. > Write a function to find the middle node of a singly-linked list.
+
+    Assuming the length of the list is given.
+
+    ```c
+    struct node * getmiddlenode( int length){
+        struct node * tempnode = head;
+        int counter = 0;
+        // iterating till the middle node from the head.
+        while ((tempnode != NULL) || counter < length){
+            tempnode = tempnode->ptr;
+            counter++;
+        }
+        return tempnode;
+    }
+    ```
+
+21. > Write a function to compare whether two binary trees are identical. Identical trees have same key value at each position and the same structure.

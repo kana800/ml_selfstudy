@@ -7,7 +7,6 @@
 #include "singlelinkedlist.h"
 
 
-
 void readFile(char *filename){
 	//file pointer
 	FILE *fp;

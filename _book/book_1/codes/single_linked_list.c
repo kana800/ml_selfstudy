@@ -1,27 +1,31 @@
 /*
+ * Question #2
  * Reverse a Given Singly-Linked List
  *
  *
- * contains a part of question 16
+ * Question #16
+ * Implement a 'linked list' dictionary word datastructure
  */
 #include <stdio.h>
 #include <stdlib.h>
 #include "singlelinkedlist.h"
+#include <string.h>
 
 struct node *head = NULL;
 struct node *tail = NULL;
 
-struct node* create_node(char ch){
+struct node* create_node(char *ch){
 	// creating a temp node pointer
 	// allocating in heap
 	struct node *temp_node = malloc(sizeof(struct node));
 	
-	temp_node->data = ch;
+	// copy content in the array to the node
+	strcpy(temp_node->data, ch);
 	temp_node->ptr = NULL;
 	return temp_node;
 }
 
-void addToTail(char ch){
+void addToTail(char *ch){
 	// creating a node
 	struct node *temp_node = create_node(ch);
 	
@@ -44,11 +48,27 @@ void printList(){
 	struct node *temp_node = head;
 	while (1){
 		if (temp_node->ptr == NULL){
-			printf("%c->end\n",temp_node->data);
+			printf("%s->end\n",temp_node->data);
 			break;
 		}
-		printf("%c->",temp_node->data);
+		printf("%s->",temp_node->data);
 		temp_node = temp_node->ptr;
+	}
+}
+
+// check if the word is present in
+// the array
+int isPresent(char *word){
+	struct node *temp_node = head;
+	while(1){
+		if (temp_node->ptr == NULL) {
+			return 1;
+		}
+		if (strcmp(temp_node->data,word) == 0){
+			return 0;
+		}else {
+			temp_node = temp_node->ptr;
+		}
 	}
 }
 
@@ -86,10 +106,27 @@ void readFile(char *filename){
 		perror("Error while opening file\n");
 		exit(EXIT_FAILURE);
 	}
+	
+	int counter;
+	char word[20];
 
-	while((ch = fgetc(fp)) != EOF){
-		printf("%c",ch);
-		addToTail(ch);
+	while (1){
+		if ((ch = fgetc(fp)) == EOF){
+			break;
+		} else if (ch == '\n'){
+			// reset the array
+			//printf("%s\n",word);
+			// create a node
+			if (isPresent(word) == 0){
+				printf("word is present!\n");	
+			}else{
+				addToTail(word);
+			}
+			for (int i=0; i< 20; i++) word[i] = '\0';
+			counter = 0;
+		}
+		word[counter] = ch;
+		counter++;
 	}
 	fclose(fp);
 }
