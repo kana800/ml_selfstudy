@@ -14,7 +14,7 @@
 struct node *head = NULL;
 struct node *tail = NULL;
 
-struct node* create_node(char *ch){
+struct node* create_node(int ch){
 	// creating a temp node pointer
 	// allocating in heap
 	struct node *temp_node = malloc(sizeof(struct node));

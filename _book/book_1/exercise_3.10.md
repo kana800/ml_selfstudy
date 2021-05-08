@@ -155,3 +155,24 @@
     ```
 
 21. > Write a function to compare whether two binary trees are identical. Identical trees have same key value at each position and the same structure.
+
+    we can check if the:
+    
+    - **Heights** of the trees are same
+    - Number of **Leaf Nodes** are same
+    
+    Next option would be iterate through both of binary trees and check if the values are same, we can have two pointers traversing through the binary tree.  
+    
+    [binary_tree_comparison](codes/binary_tree_comparison.c)
+    
+22. > Write a program to convert a binary search tree into a linked list.
+
+    [binary_to_linked](codes/binary_to_linked.c)
+
+23. > Implement an algorithm to a reverse a linked list. Now do it without recursion
+
+24. > What is the best data structure for maintaining URLs that have been visited by a Web crawler? Give an algorithm to test whether a given URL has already been visited, optimizing both space and time.
+
+    We can simply save the URLs in an **Array**,  Traversing the array would take a lot of time with the increase of URLs, we can create a dictionary and use linked list as a data structure or a hash table. 
+    
+    

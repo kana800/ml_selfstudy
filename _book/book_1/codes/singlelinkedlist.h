@@ -1,14 +1,13 @@
 #ifndef SINGLELINKEDLIST_H
 #define SINGLELINKEDLIST_H
 
-/*
-// node structure for question #10
+// node structure for question #10, question#22
 struct node{
 	char data;
 	struct node *ptr;
 };
-*/
 
+/*
 // node structure for question #16
 struct node{
 	// assuming words in the list are no more than
@@ -16,10 +15,11 @@ struct node{
 	char data[20];
 	struct node *ptr;
 };
+*/
 
 // foward declartion of all the functions
-struct node* create_node(char *ch);
-void addToTail(char *ch);
+struct nodeList* create_node(int ch);
+void addToTail(int ch);
 void printList();
 void reverseList();
 
