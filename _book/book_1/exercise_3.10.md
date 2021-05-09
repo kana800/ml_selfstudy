@@ -167,12 +167,53 @@
     
 22. > Write a program to convert a binary search tree into a linked list.
 
-    [binary_to_linked](codes/binary_to_linked.c)
+    ```c
+    int * iterateTree(struct node * root){
+        if (root == NULL){
+            return;
+        }else {
+            iterateTree(root->leftptr);
+    		createlinkednode(root);
+            iterateTree(root->rightptr);
+        }
+    }
+    ```
 
 23. > Implement an algorithm to a reverse a linked list. Now do it without recursion
+
+    [reverse_linked_list](codes/single_linked_list.c)
 
 24. > What is the best data structure for maintaining URLs that have been visited by a Web crawler? Give an algorithm to test whether a given URL has already been visited, optimizing both space and time.
 
     We can simply save the URLs in an **Array**,  Traversing the array would take a lot of time with the increase of URLs, we can create a dictionary and use linked list as a data structure or a hash table. 
     
-    
+25. > You are given a search string and a magazine. You seek to generate all the characters in search string by cutting them out from the magazine. Give an algorithm to efficiently determine whether the magazine contains all the letters in the search string.
+
+    First we can add each word in a **Trie** data structure (*Maybe we can have, binary tree inside binary tree*) :smile:. 
+
+26. > Reverse the words in a sentence `My name is chris` becomes `chris is name my`. Optimize for time and space.
+
+    [reverse the single linked list](codes/single_linked_list.c)
+
+27. > Determine whether a linked list contains a loop as quickly as possible without using any extra storage. Also, identify the location of the loop.
+
+    Have two pointers (both at the head), move *pointer 1* to one link and move *pointer 2* to two links, if they are in the same position we have loop, if not iterate till you find the location of the loop.
+
+28. > You have an unordered array *X* of *n* integers. Find the array *M* containing *n* elements where *Mi*, is the product of all integers in *X* except for *Xi*. You may not use division. You can use extra memory. 
+
+    [question_28](codes/question_28.c)
+
+29. > Give an algorithm for finding an ordered word pair (e.g., "New York") occurring with the greatest frequency in a given web page. Which data structures would you? Optimize both time and space.
+
+    We can have **Trie** and `struct`  of the tree would contain the word, frequency and the pointers.
+
+    ```c
+    struct node {
+    	char wordset[20];
+    	int frequency;
+    	struct node *leftptr;
+    	struct node *rightptr;
+    };
+    ```
+
+    while iterating through the document, if we encounter a word that is already in the **Trie** data structure, we can increment the frequency.

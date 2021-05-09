@@ -1,9 +1,11 @@
 /*
+ * -----------
  * Question #2
+ * ___________
  * Reverse a Given Singly-Linked List
- *
- *
+ * -----------
  * Question #16
+ * ____________
  * Implement a 'linked list' dictionary word datastructure
  */
 #include <stdio.h>
@@ -14,7 +16,7 @@
 struct node *head = NULL;
 struct node *tail = NULL;
 
-struct node* create_node(int ch){
+struct node* create_node(char ch){
 	// creating a temp node pointer
 	// allocating in heap
 	struct node *temp_node = malloc(sizeof(struct node));
