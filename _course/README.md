@@ -1,2 +1,3 @@
 - [coursera Machine Learning](course_1) | [Progress](https://github.com/kana800/selfstudy/issues/9#issuecomment-783939584)
 - [fromthetransistor](course_2) | [Progress](https://github.com/kana800/selfstudy/issues/9#issuecomment-787542342)
+- [MIT 6.006 Introduction to Algorithms, Fall 2011](course_3) | [Link](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/#) | [Progress]()
