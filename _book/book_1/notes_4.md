@@ -72,3 +72,40 @@ We will have `2n`, because the number of nodes doubles every layer, where we hav
 
 Quick sort break down the problem into two smaller problems just like merge sort but they way it does is different, the algorithm selections a randomized pivot point and then all the values less than the pivot is moved to the left and all the values greater than the pivot is moved to the right and [put the pivot element between the left and right elements.](https://youtu.be/jUf-UQ3a0kg?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=2512)
 
+#### Problem of the Day: Lecture 9
+
+> The nuts and bolts problem is defined as follows. You are given a collection of *n* bolts of different widths, and *n* corresponding nuts. You can test whether a given nut and bolt together, from which you learn whether the nut is too larger, too small, or an exact math for the bolt. The differences in size between pair of nuts or bolts can be small to see by eye, so you can rely on comparing the sizes of two nuts or two bolts directly. You are to match each bolt to each nut.
+>
+> 1. Give an `O(n^2)` algorithm to solve the nuts and bolts problem
+> 2. Suppose that instead of matching all of the nuts and bolts, you wish to find the smallest bolt and its corresponding nut. Show that this can be done in only `2n -2 ` comparisons
+> 3. Match the nuts and bolts in expected `O(n log n)` time.
+
+1. Assuming for each nuts there is a specific bolt
+
+   ```pseudocode
+   for n in 1 to numberofnuts:
+   	for b in 1 to bolts:
+   		if nutfitwithbolt(n[i],b[i]):
+   			match(n[i],b[i])
+   		else
+   			pass
+   ```
+
+   [answers to other questions](https://youtu.be/0ksyQKmre84?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=606)
+
+##### Lower Bounds of Sorting
+
+> Is there a faster algorithm than `O(n log n)` ?  
+
+NO
+> How do we know that there are no algorithms better than `O(n log n)` ?
+
+Sorting Algorithms like (Insertion Sort, Quick Sort, Merge Sort) are comparing algorithms, each algorithm compare two elements and change the position of the elements if needed. If we use [tree data structure](https://youtu.be/0ksyQKmre84?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=1083), the worst case of sorting algorithm will be the height of the tree (`O(h)`).  [Math Behind This](https://youtu.be/0ksyQKmre84?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=1387)
+
+##### Non-Comparison-Based Sorting : Bucket Sort
+
+> suppose we are sorting [*n* numbers](https://youtu.be/0ksyQKmre84?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=2304) from 1 to *m*, where we know the numbers are approximately uniformly distributed. We can set up *n* buckets, each responsible for an interval of `m/n` numbers from 1 to *m*.
+
+We *hash* elements in the list, and allocate them in buckets according to its numerical hashing value, for example `2` *hashed* by `m/n (3/2)` would give us `3` , which would go the bucket that hold the value `3`. Here we are assuming that the numbers are uniformly distributed, if there is skew in the list we are going to get all the numbers into one bucket ([worst case scenario](https://youtu.be/0ksyQKmre84?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=2669)). 
+
+*we want algorithms that performs best at the worst case because we don't want any algorithm to slow down because of weird distributions.*
