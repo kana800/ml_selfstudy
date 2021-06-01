@@ -3,7 +3,7 @@
 - Introduction to Algorithm Design ([solutions](exercise_1.7.md)) | ([Lecture/Notes](notes_1.md)) | ([Lecture PDF](https://www3.cs.stonybrook.edu/~skiena/373/current-lectures/lecture1.pdf))
 - Algorithm Analysis ([solutions](exercise_2.10.md)) | ([Lecture/Notes](notes_2.md)) | ([Lecture PDF](https://www3.cs.stonybrook.edu/~skiena/373/current-lectures/lecture2.pdf))
 - Data Structures ([solutions](exercise_3.10.md)) | ([Lecture/Notes](notes_3.md)) | ([Lecture PDF](https://www3.cs.stonybrook.edu/~skiena/373/current-lectures/lecture4.pdf))
-- Sorting ([solutions](exercise_4.10.md)) | ([Lecture/Notes](notes_4.md)) | ([Lecture PDF]())
+- Sorting ([solutions](exercise_4.11.md)) | ([Lecture/Notes](notes_4.md)) | ([Lecture PDF](https://www3.cs.stonybrook.edu/~skiena/373/current-lectures/lecture7.pdf))
 
 
 ### Other
