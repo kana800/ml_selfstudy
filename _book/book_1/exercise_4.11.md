@@ -91,4 +91,93 @@
 
    This would take `O(n)` time. *The above code isn't tested*
 
-6. 
+6. > Give two sets `S1` and `S2` (each of size *n*), and a number *x*, describe on `O(n log n)` algorithm for finding  whether there exists a pair of elements, one from `S1` and one from `S2`, that add up to `x`. (For partial credit, give `\theta(n^2)` algorithm for this problem.)
+
+   ```c
+   int function ispairexit(s1,s2){
+   	for (int i = 0; i < n ; i++){
+           if (s1[i] + s2[i] == x){
+               return 0;
+           }
+       }
+           return -1;
+   }
+   ```
+
+   The above algorithm will take `O(n)` time. 
+
+   We can sort both of the sets `s1` & `s2`. These two arrays can be sorted and then we can iterate until we reach the `X` value in both sets. Sorting is going take `O(n log n)` time, and we can do a binary search, `O(n log n)`.
+
+7. > Outline a reasonable method of solving each of the following problems. Give the order of the worst-case complexity of your methods.
+
+   - > You are given a pile of thousands of telephone bills and thousands of checks sent in to pay the bills. Find out who did not pay.
+
+     We need to `check` the number mentioned in the check against the telephone bill database, we can have hashed table with all the telephone numbers this would take a lot of space, but it would be faster, we can simply iterate through the `check` to see whether person has payed their bill or not.  
+
+     Space complexity of the hash table would be `O(n)`.  Worst Case Search time of hash table would be `O(n)`.  Iterating through the checks would take `O(n)` time, we can improve the time by using multiprocessing.
+
+   - > You are given a list containing the title, author, call number and publisher of all the books in a school library and another list of 30 publishers. Find put how many of the books in the library were published by each company.
+
+     We 4 different `trie` data structures for each of the properties in the book (title, author, call number, publisher) and to make sure we aren't repeating the same data we can store `pointer to book structure` stored in the node of each tree. We can return the count of a given publisher by iterating through the `trie` data structure.
+
+   - > You are given all the book checkout cards used in the campus library during the past year, each of which contains the name of the person who took out the book. Determine how many distinct people checked out at least one book
+
+     We can use a hash table with a counter, for each person, we will be hashing the campus id. We are going to read the checkout cards in the books and if a name is encountered we will iterate the counter, we can have a global variable that counts the number of people that checked out at least one  book. For example: If sam smith is encountered his campus id will be hashed and counter will be incremented by one and the global counter will also be incremented by one.
+
+8. > Given a set of `S` containing *n* real numbers, and a real number *x*. We seek an algorithm to determine whether two elements of `S` exist whose sum is exactly *x*.
+
+   - > Assume that `S` is unsorted. Given an `O(n log n)` algorithm for the problem.
+
+     we can sort set `S` using merge sort and do a binary search for the element.
+
+     ```python
+     def main():
+         # returns a sorted array
+         s = mergesort(s) 
+         for i in range(1, len(s)):
+             # returns if the value is present
+             if (binarysearch(x - s[i]))	    
+                 return true
+         return false
+     ```
+
+   - > Assume that `S` is sorted. Give an `O(n)` algorithm for the problem.
+
+     We can use a hash table, the look up would be `O(1)`, since the set is already sorted, instead of doing a binary search we just simply look up in the hash table.
+
+9. > Give an efficient algorithm to compute the union of sets `A` and `B`, where `n = max(|A|,|B|)`. The output should be an array of distinct elements that form the union of the sets, such that they appear more than once in the union.
+
+   - > Assume that `A` and `B` are unsorted. Give an `O(n log n)` algorithm for the problem
+
+     we can sort both the set `A` and set `B` using merge sort, which would take `O(n log n)` and then we can compare each element `O(n log n + m log m)` time. Next we are going to iterate through the sorted array, we need two pointers `i` & `j`. If `A[i] < B[i]`, then increment `i`. If `A[j] > B[j] ` then increment `j`. If `A[i] == B[i]` increment both `i` and `j` this process would take `O(n + m)` time.
+     
+   - > Assume that `A` and `B` are sorted. Give and `O(n)` algorithm for the problem.
+   
+     ```python
+     # stores union set
+     union = set()
+     
+     # append all the values of the smaller array to the set
+     for i in range(0, len(A)):
+         union.add(A[i])
+         
+     # append all the values of array B
+     for i in range(0, len(B)):
+         union.add(B[i])
+     ```
+   
+     After adding all the values of the smaller array to the empty set, we can iterate over the other array (`B`), we will check if the array already exist in the set and if not we can add it, this would take `O(n + m)` time.
+   
+10. > Given a set *S* of *n* integers and an integer *T*, given an  ![](https://latex.codecogs.com/png.latex?%5Cinline%20O%28n%5E%7Bk%20-1%7D%20%5Clog%20n%29) algorithm to test whether *k* of the integers in *S* add up to *T*
+
+    | k    | Big Oh                                                       |
+    | ---- | ------------------------------------------------------------ |
+    | 1    | ![](https://latex.codecogs.com/png.latex?%5Cinline%20O%28%20%5Clog%20n%29) |
+    | 2    | ![](https://latex.codecogs.com/png.latex?%5Cinline%20O%28n%20%5Clog%20n%29) |
+    | 3    | ![](https://latex.codecogs.com/png.latex?%5Cinline%20O%28n%5E2%20%5Clog%20n%29) |
+
+    when `k = 2`, we can sort the set `S` and do a binary search while iterating through the set `S`
+
+    when `k = 3`, we can sort the array like before and then we need loop over two times through the array and do a binary search (`T - S[i]- S[j]`)because we need to find 3 set of integers that add up to `T`.
+
+    
