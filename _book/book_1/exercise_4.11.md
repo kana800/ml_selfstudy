@@ -179,5 +179,86 @@
     when `k = 2`, we can sort the set `S` and do a binary search while iterating through the set `S`
 
     when `k = 3`, we can sort the array like before and then we need loop over two times through the array and do a binary search (`T - S[i]- S[j]`)because we need to find 3 set of integers that add up to `T`.
-
     
+11. > Design `O(n)` algorithm that, given a list of *n* elements, finds all the elements that appear mote then  `n/2` times in the list. *Then*, design an `O(n)` algorithm that, given a list of *n* elements, finds all the elements that appear more than `n/4` times.
+
+    we can create a hash table that will store the counter value of each number.
+
+    ```python
+    # array with n elements
+    A = [5,3,4,4]
+    n = len(A)
+    hashtable = {};
+    for i in range(0, len(A)):
+        element = hashfunction(i)
+        if element in hashtable.keys():
+            hashtable[element] += 1
+        else:
+            hashtable[element] = 1
+    
+    # for the first part
+    for KEY,COUNT in hashtable.values():
+        if COUNT >= n/2:
+            print(COUNT)
+    # for the second part
+    for KEY,COUNT in hashtable.values():
+        if COUNT >= n/4:
+            print(COUNT)  
+    ```
+
+    #### Heaps
+
+12. > Devise an algorithm for finding the *k* smallest elements of an unsorted set of *n* integers in `O(n + k log n)`.
+
+    Build a heap (bubble down) by iterating through the set of *n* integers, this would take `O(n)` time and find `k` smallest elements consecutively till you get the `kth` smallest value `O(k log n)`
+13. > You wish to store a set of *n* numbers in either a max-heap or a sorted array. For each application below, state which data structure is better, or if it does not matter. Explain your answers.
+
+    - > Want to find the maximum element quickly
+
+      Both cost `O(1)` time.
+
+    - > Want to be able to delete and element quickly
+
+      If we know the exact position for heap it would cost `O(log n)` and for sorted array it would cost `O(n)`. If we don't know the position, searching through the max-heap cost `O(n)` and then to delete it would cost `O(log n)` and to binary search through sorted array it would cost `O(log n)`.  
+
+    - > Want be able to form the structure quickly
+
+      max-heap cost `O(n)` and sorted array cost `O(n log n)`
+
+    - > Want to find minimum element quickly
+
+      max-heap cost `O(n)` and sorted array cost `O(1)`
+
+14. > Give an `O(n log k)`- time algorithm that merges *k* sorted lists with a total of *n* elements into one sorted list. (Hint: Use  a heap to speed up the elementary `O(kn)`-time algorithm)
+
+    Iterate through the *k* sorted list and form *min-heap* `O(n * k)`.  Obtain the minimum value from the *min-heap* and allocate it to a new array.
+
+15. > Give an efficient algorithm to find the second-largest key among *n* keys. you can do better than `2n - 3` comparisons.
+
+    ```c
+    int main(){
+        // stores the largest items
+        int arr[] = {5,6,9,2,1}
+        int largest_arr[2] = {0,0};
+        
+        // intializing the largest arr
+        largest_arr[0] = arr[0];
+        largest_arr[1] = arr[1];
+        
+        // iterate throught the arr array
+        for (int i = 2; i < sizeof(arr)/sizeof(arr[0]); i++){
+            // comparing the elements against the largest element
+            if ((arr[i] > largest_arr[0]) || (arr[i] > largest_arr[1])){
+                // find the smallest value in largest_arr and 
+                // replace it with the current element
+                replace_smallest(largest_arr, arr[i]);
+            }
+        }
+    }
+    ```
+
+    [check this out in action](codes/exercise_4.16.a.c), worst case scenario is the first two elements are the smallest, `2n - 3` comparisons
+
+    > Then, given an efficient algorithm to find the third-largest key among *n* keys. How many key comparisons does your algorithm do in the worst case? Must your algorithm determine which key is largest and second-largest in the process.
+
+    `largest_arr` is now holding `3` values so the iteration starts `N - 3`, worst case would be first 3 numbers of the `arr` is the smallest, there would be `3(N - 3) + 2` comparisons. Yes we will find the second largest key during the process as well.
