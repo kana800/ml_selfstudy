@@ -211,6 +211,7 @@
 12. > Devise an algorithm for finding the *k* smallest elements of an unsorted set of *n* integers in `O(n + k log n)`.
 
     Build a heap (bubble down) by iterating through the set of *n* integers, this would take `O(n)` time and find `k` smallest elements consecutively till you get the `kth` smallest value `O(k log n)`
+    
 13. > You wish to store a set of *n* numbers in either a max-heap or a sorted array. For each application below, state which data structure is better, or if it does not matter. Explain your answers.
 
     - > Want to find the maximum element quickly
@@ -262,3 +263,55 @@
     > Then, given an efficient algorithm to find the third-largest key among *n* keys. How many key comparisons does your algorithm do in the worst case? Must your algorithm determine which key is largest and second-largest in the process.
 
     `largest_arr` is now holding `3` values so the iteration starts `N - 3`, worst case would be first 3 numbers of the `arr` is the smallest, there would be `3(N - 3) + 2` comparisons. Yes we will find the second largest key during the process as well.
+
+    #### Quicksort
+
+    16. > Use the partitioning idea of quick sort to give an algorithm that finds the *median* element of an array of *n* integers in expected `O(n)` time. (Hint: must you look at both sides of the partition)
+
+        Randomly select the pivot. [Implementation of Quick Sort](codes/quicksort.c)
+
+    17. > The *median* of a set of *n* values is the `n/2`th smallest value.
+
+        - > Suppose quicksort always pivoted on the median of the current sub-array. How many comparisons would Quicksort make then in the worst case?
+
+          Subproblems are always half the size, the worst case would be the array is already sorted in the descending order. `2n - 1 ` comparisons
+
+        - > Suppose quicksort were always to pivot on the `n/3`th smallest value of the current sub-array. How many comparisons would be made then in the worst case?
+
+          worst case would be the array is already sorted in the descending order. `2n - 1 ` comparisons.
+
+    18. > Suppose an array *A* consists of *n* elements, each of which is *red, white,* or *blue*. We seek to sort the elements so that all the *reds* come before all the *whites*, which comes before all the *blues*. The only operation permitted on the keys are
+
+        - > `Examine(A,i)` - report the color of the `i`th element of *A*. `Swap(A, i ,j)`  - swap the `i`th element of *A* with the `j`th element.
+          >
+          > Find a correct and efficient algorithm for red-white-blue sorting. There is a linear-time solution.
+
+          Consider red and white as same color and separate color blue using quick sort and then separate the red and white color.
+
+    19. > An [*inversion* of a permutation](https://www.ndsu.edu/pubweb/~dyheuer/Inversions%20of%20Permutations.pdf) is a pair of elements that are out of order.
+
+        - > Show that a permutation of *n* items has at most `n(n - 1)/ 2` inversions. Which permutations(s) have exactly `n(n - 1)/ 2` inversions?
+
+          Example : `arr = {6,5,4,3,2,1}; n = 6 `. 
+
+          | Element | Inversion number |
+          | ------- | ---------------- |
+          | 6       | 5                |
+          | 5       | 4                |
+          | 4       | 3                |
+          | 3       | 2                |
+          | 2       | 1                |
+          | 1       | 0                |
+
+          `Total number of inversions = 15`
+
+          claim : permutation with `n` items have `n(n - 1)/2` inversions, substituting `n = 6`: `6(6 - 1) / 2 = 15`.  To get the maximum number of inversions the elements should be sorted in the descending order. 
+
+        - >  Let *P* be a permutation and ![](https://latex.codecogs.com/png.latex?%5Cinline%20P%5E%7Br%7D)be the reversal of this permutation. Show that `P` and ![](https://latex.codecogs.com/png.latex?%5Cinline%20P%5E%7Br%7D) have a total of exactly `n(n - 1)/2` inversions.
+        - > Use the previous result to argue that the expected number of inversions in a random permutation is `n(n - 4)/4`.
+        
+    20. > Give an efficient algorithm  to rearrange an array of *n* keys so that all the negative keys precede all the non-negative keys. You algorithm must be in-place, meaning you can allocated another array to temporarily hold the items. How fast is your algorithm ? 
+
+        [Implementation of Quick Sort](codes/quicksort.c)
+
+        
