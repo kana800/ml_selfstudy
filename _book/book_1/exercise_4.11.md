@@ -264,54 +264,88 @@
 
     `largest_arr` is now holding `3` values so the iteration starts `N - 3`, worst case would be first 3 numbers of the `arr` is the smallest, there would be `3(N - 3) + 2` comparisons. Yes we will find the second largest key during the process as well.
 
-    #### Quicksort
+    #### Quick-sort
 
-    16. > Use the partitioning idea of quick sort to give an algorithm that finds the *median* element of an array of *n* integers in expected `O(n)` time. (Hint: must you look at both sides of the partition)
+16. > Use the partitioning idea of quick sort to give an algorithm that finds the *median* element of an array of *n* integers in expected `O(n)` time. (Hint: must you look at both sides of the partition)
 
-        Randomly select the pivot. [Implementation of Quick Sort](codes/quicksort.c)
+	Randomly select the pivot. [Implementation of Quick Sort](codes/quicksort.c)
 
-    17. > The *median* of a set of *n* values is the `n/2`th smallest value.
+17. > The *median* of a set of *n* values is the `n/2`th smallest value.
+	
+	 - > Suppose quicksort always pivoted on the median of the current sub-array. How many comparisons would Quicksort make then in the worst case?
+	
+	Subproblems are always half the size, the worst case would be the array is already sorted in the descending order. `2n - 1 ` comparisons
 
-        - > Suppose quicksort always pivoted on the median of the current sub-array. How many comparisons would Quicksort make then in the worst case?
+- > Suppose quicksort were always to pivot on the `n/3`th smallest value of the current sub-array. How many comparisons would be made then in the worst case
 
-          Subproblems are always half the size, the worst case would be the array is already sorted in the descending order. `2n - 1 ` comparisons
+  worst case would be the array is already sorted in the descending order. `2n - 1 ` comparisons.
 
-        - > Suppose quicksort were always to pivot on the `n/3`th smallest value of the current sub-array. How many comparisons would be made then in the worst case?
+18. > Suppose an array *A* consists of *n* elements, each of which is *red, white,* or *blue*. We seek to sort the elements so that all the *reds* come before all the *whites*, which comes before all the *blues*. The only operation permitted on the keys are
+	-  `Examine(A,i)` - report the color of the `i`th element of *A*. 	
+	-  `Swap(A, i ,j)`  - swap the `i`th element of *A* with the `j`th element.
+	 Find a correct and efficient algorithm for red-white-blue sorting. There is a linear-time solution.
+	
+	Consider red and white as same color and separate color blue using quick sort and then separate the red and white color.
+		
+	
+19. > An [*inversion* of a permutation](https://www.ndsu.edu/pubweb/~dyheuer/Inversions%20of%20Permutations.pdf) is a pair of elements that are out of order.
+	
+	- > Show that a permutation of *n* items has at most `n(n - 1)/ 2` inversions. Which permutations(s) have exactly `n(n - 1)/ 2` inversions?
+	
+	  Example : `arr = {6,5,4,3,2,1}; n = 6 `. 
 
-          worst case would be the array is already sorted in the descending order. `2n - 1 ` comparisons.
+	  | Element | Inversion number |
+	  | ------- | ---------------- |
+	  | 6       | 5                |
+	  | 5       | 4                |
+	  | 4       | 3                |
+	  | 3       | 2                |
+	  | 2       | 1                |
+	  | 1       | 0                |
 
-    18. > Suppose an array *A* consists of *n* elements, each of which is *red, white,* or *blue*. We seek to sort the elements so that all the *reds* come before all the *whites*, which comes before all the *blues*. The only operation permitted on the keys are
-
-        - > `Examine(A,i)` - report the color of the `i`th element of *A*. `Swap(A, i ,j)`  - swap the `i`th element of *A* with the `j`th element.
-          >
-          > Find a correct and efficient algorithm for red-white-blue sorting. There is a linear-time solution.
-
-          Consider red and white as same color and separate color blue using quick sort and then separate the red and white color.
-
-    19. > An [*inversion* of a permutation](https://www.ndsu.edu/pubweb/~dyheuer/Inversions%20of%20Permutations.pdf) is a pair of elements that are out of order.
-
-        - > Show that a permutation of *n* items has at most `n(n - 1)/ 2` inversions. Which permutations(s) have exactly `n(n - 1)/ 2` inversions?
-
-          Example : `arr = {6,5,4,3,2,1}; n = 6 `. 
-
-          | Element | Inversion number |
-          | ------- | ---------------- |
-          | 6       | 5                |
-          | 5       | 4                |
-          | 4       | 3                |
-          | 3       | 2                |
-          | 2       | 1                |
-          | 1       | 0                |
-
-          `Total number of inversions = 15`
-
-          claim : permutation with `n` items have `n(n - 1)/2` inversions, substituting `n = 6`: `6(6 - 1) / 2 = 15`.  To get the maximum number of inversions the elements should be sorted in the descending order. 
-
+	  `Total number of inversions = 15`
+      
+	  claim : permutation with `n` items have `n(n - 1)/2` inversions, substituting `n = 6`: `6(6 - 1) / 2 = 15`.  To get the maximum number of inversions the elements should be sorted in the descending order. 
+      
         - >  Let *P* be a permutation and ![](https://latex.codecogs.com/png.latex?%5Cinline%20P%5E%7Br%7D)be the reversal of this permutation. Show that `P` and ![](https://latex.codecogs.com/png.latex?%5Cinline%20P%5E%7Br%7D) have a total of exactly `n(n - 1)/2` inversions.
         - > Use the previous result to argue that the expected number of inversions in a random permutation is `n(n - 4)/4`.
-        
-    20. > Give an efficient algorithm  to rearrange an array of *n* keys so that all the negative keys precede all the non-negative keys. You algorithm must be in-place, meaning you can allocated another array to temporarily hold the items. How fast is your algorithm ? 
 
-        [Implementation of Quick Sort](codes/quicksort.c)
+20. > Give an efficient algorithm  to rearrange an array of *n* keys so that all the negative keys precede all the non-negative keys. You algorithm must be in-place, meaning you can allocated another array to temporarily hold the items. How fast is your algorithm ? 
 
+	[Implementation of Quick Sort](codes/quicksort.c)
+
+#### Other Sorting Algorithms
+
+21. > Stable sorting algorithms leave equal-key items in the same relative order as in the original permutation. Explain what must be done to ensure that mergesort is a stable sorting algorithm.
+
+	Mergesort algorithms are already stable with top down and bottom up approaches, when algorithms will similar key values are compared we dont need to switch them just doing this will keep the elements with the same key values in the original order.
+
+22. > Show that *n* positive integers in the range `1` to `k` can be sorted in `O(n log k)` time. The interesting case is when `k << n`.
+    
+	Example : ` k = 8`, `n = 4  `, `arr = {5,6,8,7}`. `O(log k)` where `k = 8` would mean `3 steps/divisions`. 
         
+	```
+		 {5,6,8,7}		(1)
+		{5,6} {8,7}  	(2)
+	   {5} {6}{8} {7} 	(3)
+	```
+    
+	Normal merge sort algorithm would take `O (n log k)` times. When `k < n` (`k = 4`,`n = 6`,`arr = {1,3,1,4,3,2}`). `O( log k)` where `k = 4` means `2 steps/divisions`. We can divide the array at the median and use quick sort to sort all the elements.
+	
+23. > We seek to sort a sequence `S` of `n` integers with many duplications, such that the number of distinct integers in `S` is `O(log n)`. Give and `O(n log log n)` worst-case  time algorithm  to sort such sequence
+
+    Example: `n = 8`, `number of distinct integers = O(log n) = log(8) = 3`, `s = {2,3,3,3,4,5,5,5}`.
+
+    If we are using merge sort, this would take us `O(n log N)` times and here the `N` would be the number of distinct numbers, `log n`.  Therefore a simple `O(n log log n)` algorithm would be the merge sort algorithm.
+
+24. > Let `A[1..n]` be an array such that the first ![](https://latex.codecogs.com/png.latex?%5Cinline%20n%20-%20%5Csqrt%7Bn%7D)elements are already sorted (though we know nothing about the remain elements). Give an algorithm that sorts `A` in substantially better than `n log n` steps.
+
+    Example: `n = 8`, first ![](https://latex.codecogs.com/png.latex?%5Cinline%208%20-%20%5Csqrt%7B8%7D) (`4`)items will be sorted. Since we know the first `4` items are sorted we can do a merge sort but instead of dividing the algorithm from the median we can divide it after the first  ![](https://latex.codecogs.com/png.latex?%5Cinline%20n%20-%20%5Csqrt%7Bn%7D) elements. 
+
+    ```
+    	{1,2,3,4,7,6,5,8} (1)
+    {1,2,3,4}	 {7,6,5,8} (2)
+    			{7,6} {5,8} (3)
+    ```
+
+    
