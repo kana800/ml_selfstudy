@@ -348,4 +348,37 @@
     			{7,6} {5,8} (3)
     ```
 
+    The above algorithm will be ![](https://latex.codecogs.com/png.latex?%5Cinline%20O%28n%20%5Clog%20n%20-%20%5Csqrt%20n%29)
     
+25. > Assume that the array `A[1..n]` only has numbers from `{1,...,n^2}` but that at most `log log n` of these numbers ever appear. Devise an algorithm that sorts `A` in substantially less than `O(n log n)`
+
+    Balanced Binary Search Tree (Merge Sort) the height of the tree would be `O(log log n)`, the worst case would be `O(n log log log n)` 
+
+26. > Consider the problem of sorting a sequence of *n* `0's` and `1's` using comparisons. For each comparison of two values *x* and *y*, the algorithm learns which of `x < y`, `x = y` or  `x > y` holds.
+    >
+    > ***I didn't get this question!*** :cry:
+
+    - > Give an algorithm to sort in `n - 1` comparisons in the worst case. Show that your algorithm is optimal.
+
+      Since the sequence on consist of `1` and `0` we can count the number of ones and zeros and create a new array and insert the `0` first and then `1`.
+
+      ```python
+      x = [1,1,0,0,0,1]
+      count_one = 0 # stores the count of 1's
+      count_zero = 0 # stores the count of 0's
+      
+      for i in x:
+          if i == 1:
+              count_one += 1
+      	else:
+              count_zero += 1
+      ```
+	
+	- > Give an algorithm to sort in `2n/3` comparisons in the average case (assuming each of *n* inputs in `0` or `1` with equal probability). Show that your algorithm is optimal.
+
+      we can implement a bucket sort algorithm, assuming that there is equal distribution of `1`'s and `0`'s .
+    
+27. > Let `P` be a simple, but not necessarily convex, polygon and `q` an arbitrary point not necessarily in `P`. Design an efficient algorithm to find a line segment originating from `q` that intersects the maximum number of edges of `P`. In other words, if standing at point `q`, in what direction should you aim a gun so the bullet will go through the largest number of walls. A bullet through a vertex of `P` gets credit for only one wall. An `O(n log n)` algorithm is possible.
+
+    From the point `q` obtain the polar coordinates to the edges of  polygon `P` (start point & end point of each edge) `O(n)` and then we can sort these point in the ascending order `O(n log n)`.  After this loop through the array to find the possible lines (in polygon `P`) that nearly intersects, increment when we encounter a edge and decrement when we encounter head  `O(n)`.
+
