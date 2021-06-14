@@ -9,7 +9,7 @@
 
 ### Syllabus
 
-- [ ] What is computation?
+- [x] What is computation?
 - [ ] Branching and Iteration
 - [ ] String Manipulation, Guess and Check, Approximation, Bisection
 - [ ] Decomposition, Abstractions, Functions
@@ -21,5 +21,12 @@
 - [ ] Understanding Programming Efficiency Part 2
 - [ ] Searching and Sorting
 
+### Problem Set
+
+- [x] Problem Set 0 | [MIT](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/assignments/ps0.zip) | [Answer](codes/ps0.py)
+- [x] Problem Set 1 | [MIT](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/assignments/MIT6_0001F16_ps1.pdf)| [Answer](codes/ps1.py)
+
+
 ### Log
 
+- 2021-06-04 Finished `what is computation`, `problem set 0`, `problem set 1`
