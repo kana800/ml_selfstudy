@@ -18,7 +18,7 @@ Selection sort takes `O(n(T(A) + T(B)))` time.
 
 ##### Heap / Priority Queue
 
-When implementing  a sorting algorithm, the data structure matters. Using array or unsorted linked list as the data structure, for **Task A** it would cost `O(n)` time and **Task B** would cost `O(n^2)` time. Using balanced search tree, **Task A**  and **Task B ** would take `O(log n)` time. For an `O(n log n)` selection sort is called as **heap sort**
+When implementing  a sorting algorithm, the data structure matters. Using array or unsorted linked list as the data structure, for **Task A** it would cost `O(n)` time and **Task B** would cost `O(n^2)` time. Using balanced search tree, **Task A**  and **Task B** would take `O(log n)` time. For an `O(n log n)` selection sort is called as **heap sort**
 
 *Key point is **data structure** matters*
 

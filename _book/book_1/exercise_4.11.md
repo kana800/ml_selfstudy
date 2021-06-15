@@ -382,3 +382,86 @@
 
     From the point `q` obtain the polar coordinates to the edges of  polygon `P` (start point & end point of each edge) `O(n)` and then we can sort these point in the ascending order `O(n log n)`.  After this loop through the array to find the possible lines (in polygon `P`) that nearly intersects, increment when we encounter a edge and decrement when we encounter head  `O(n)`.
 
+#### Lower Bounds
+
+28. > In one of my research papers, I discovered a comparison-based sorting algorithm runs in ![](https://latex.codecogs.com/png.latex?%5Cinline%20O%28n%20%5Clog%20%5Csqrt%20n%29). Given the existence of an ![](https://latex.codecogs.com/png.latex?%5Cinline%20%5COmega%20%28n%20%5Clog%20%5Csqrt%20n%29) lower bound for sorting, how can this be possible ?
+
+    ![](https://latex.codecogs.com/png.latex?%5Cinline%20n%20%5Clog%20%5Csqrt%20n)  can be written as ![](https://latex.codecogs.com/png.latex?%5Cinline%20n%20%5Clog%20n%5E%7B1/2%7D) can be simplified to ![](https://latex.codecogs.com/png.latex?%5Cinline%20%5Cfrac%7B1%7D%7B2%7Dn%20%5Clog%20n) which is ![](https://latex.codecogs.com/png.latex?%5Cinline%20%5COmega%20%28n%20%5Clog%20n%29). The above claim in the research paper doesn't violate the lower bounds of sorting.
+    
+29. > Mr. B. D. C. Dull claims to have developed a new data structure for priority queues that supports the operations *Insert*, *Maximum*, and *Extract-max* all in `O(1)` worst-case time. Prove that he is mistaken.
+
+    If Extraction of maximum takes `O(1)` time, if we have the data structure with `n`  elements then sorting this set would take `O(n)` time.
+    
+#### Searching
+
+30. > A company database consists of `10,000` sorted names, `40%` of whom are known as good customers and who together account for `60%` of the accesses to the database. There are two data structures options to consider for representing the database:
+    >
+    > - Put all names in a single array and use binary search
+    > - Put the good customers in one array and the rest of them in a second array. Only if we don't find the query name on a binary search of the first array do we do a binary search of the second array.
+    >
+    > Demonstrate which options gives better expected performance. Does this change if linear search on an unsorted array is used instead of binary search for both options?
+
+    If we put the all the names in a single array and use binary search, the time complexity for searching would be `O(log n)`.
+
+    ```
+    n = 10000
+    log (10000) = 13.2877123795
+    ```
+
+    If we put all the good customers in one array and the rest of them in a second array, the worst case would be customer not found in the first array and second array.
+
+    ```
+    n = 4000 (first array)
+    log (4000) = 11.96
+    
+    n = 6000 (second array)
+    log (6000) = 12.55
+    
+    worst-case = 11.96 + 12.55 = 24.51
+    ```
+
+    The first option, putting all names in one single array gives us the best run-time.
+
+    If linear search is used instead of binary search, using the two array option is much better.
+
+31. > Suppose you are given an array `A` of  *n* sorted numbers that has been *circularly shifted k* positions to the right. For example, `{35,42,5,15,27,29}` is a sorted array that has been circularly shifted `k=2` positions, while `{27,29,35,42,5,15}` has been shifted `k=4` positions.
+
+    - > suppose you know what *k* is. Give an `O(1)` algorithm to find the largest number in *A*.
+
+      ```python
+      A = [35,42,5,15,27,29]
+      k = 2
+      maximum = A[k - 1]
+      print(f"Maximum is {maximum}")
+      ```
+
+    - > Suppose you do not know what *k* is. Give an `O(log n)` algorithm to find the largest number in *A*. For partial credit, you may give an `O(n)` algorithm.
+
+      ```c
+      // for partial credit
+      A = {35,42,5,15,27,29};
+      size = sizeof(A)/sizeof(A[0]);
+      int max = A[0];
+      for (int i = 1; i < size; i++){
+          if A[i] > max{
+              max = A[i];
+          }
+      }
+      ```
+
+      ```python
+      # O(log n) algorithm
+      A = [35,42,5,15,27,29]
+      leftmost = 0
+      rightmost = length(A) - 1
+      maximum = 0
+      if A[leftmost] < A[rightmost]:
+          maximum = A[rightmost]
+      # median of the array
+      median = length(A) / 2
+      ```
+
+      
+
+      
+
