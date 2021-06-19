@@ -459,26 +459,21 @@
       	# array is already sorted
           if A[leftmost] < A[rightmost]:
           	return A[rightmost]
-          elif lestmost == rightmost:
-      ```
-    # array has only one element
-          	return A[rightmost]
+          elif leftmost == rightmost:
+              # array has only one element
+                	return A[rightmost]
+        		# median of the array
+        	median = leftmost + rightmost / 2
+        	if ((median + 1 <= rightmost) and A[median] > A[median+1]):
+          	  return A[mid]
+        	elif ((median - 1 >= leftmost) and A[median - 1] > A[median]):
+            	return A[mid - 1]
         
-          # median of the array
-          median = leftmost + rightmost / 2
-        
-          if ((median + 1 <= rightmost) and A[median] > A[median+1]):
-              return A[mid]
-          elif ((median - 1 >= leftmost) and A[median - 1] > A[median]):
-              return A[mid - 1]
-          
-          # recursion
-          if A[mid] < A[rightmost]:
-          	return largestNumber(leftmost, median - 1)
-          else:
-          	return largestNumber(median + 1, rightmost)
-      ```
-      
+        	# recursion
+        		if A[mid] < A[rightmost]:
+        			return largestNumber(leftmost, median - 1)
+        		else:
+        			return largestNumber(median + 1, rightmost) 
       ```
     
 32. > Consider the numerical 20 Questions game. In this game, Player 1 thinks of a number in range in 1 to n`. Player 2 has to figure out this number by asking the fewest true/false questions.
