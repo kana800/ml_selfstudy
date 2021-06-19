@@ -454,14 +454,140 @@
       A = [35,42,5,15,27,29]
       leftmost = 0
       rightmost = length(A) - 1
-      maximum = 0
-      if A[leftmost] < A[rightmost]:
-          maximum = A[rightmost]
-      # median of the array
-      median = length(A) / 2
+      
+      def largestNumber(leftmost, rightmost):
+      	# array is already sorted
+          if A[leftmost] < A[rightmost]:
+          	return A[rightmost]
+          elif lestmost == rightmost:
       ```
-
+    # array has only one element
+          	return A[rightmost]
+        
+          # median of the array
+          median = leftmost + rightmost / 2
+        
+          if ((median + 1 <= rightmost) and A[median] > A[median+1]):
+              return A[mid]
+          elif ((median - 1 >= leftmost) and A[median - 1] > A[median]):
+              return A[mid - 1]
+          
+          # recursion
+          if A[mid] < A[rightmost]:
+          	return largestNumber(leftmost, median - 1)
+          else:
+          	return largestNumber(median + 1, rightmost)
+      ```
       
+      ```
+    
+32. > Consider the numerical 20 Questions game. In this game, Player 1 thinks of a number in range in 1 to n`. Player 2 has to figure out this number by asking the fewest true/false questions.
 
-      
+    - > What is an optimal strategy if *n* is known ?
 
+      Probably get the median of the numbers in range of `1 to n` and ask if its greater than the median number, if true move right else move left. keep doing this until you find the number.
+
+    - > What is a good strategy if *n* is not known?
+
+      This would be harder to get, randomly select a number and ask if the number is greater or smaller, keep randomly selecting numbers in the given range while asking if the number is greater or smaller.
+
+33. > Suppose that you are given a sorted sequence of *distinct* integers ![](https://latex.codecogs.com/png.latex?%5Cinline%20%7Ba_1%2Ca_2%2C...%2Ca_n%7D). Give an `O( log n)` algorithm to determine whether there exists and `i` index such as ![](https://latex.codecogs.com/png.latex?%5Cinline%20a_i%20%3D%20i). For example, in `{-10,-3,3,5,7}`, `a3 = 3`. In `{2,3,4,5,6,7}`, there is not such `i`.
+
+    ```python
+    def iExist(A):
+        left = 0
+        right = len(A) - 1
+        middle = right / 2
+    
+        while (right >= left):
+            # check if the middle value
+            # greater or smaller compared
+            # with the index
+            if A[middle] < middle + 1:
+                left = middle + 1
+            elif A[middle] > middle + 1:
+                right = middle - 1
+            else:
+                # we found the number
+                return True
+    	return False
+    ```
+
+34. > Suppose that you are given a sorted sequence of distinct integers ![](https://latex.codecogs.com/png.latex?%5Cinline%20%7Ba_1%2Ca_2%2C...%2Ca_n%7D), drawn from `1 to m` where `n < m`. Give an `O(log n)` algorithm to find an `integer <= m` that is not present in `a`. For full credit, find the smallest such integer.
+    >
+    > *cant understand this question*
+
+    `{2,3,4,5,6,7}`, `n < m: 6 < 7`. `m` is the maximum value in a sorted array. Therefore the integer would be the rightmost element plus one (assuming that `m` is present in the array).
+
+    ```python
+    # finding the smallest integer
+    left = 0
+    right = len(A) - 1
+    
+    while right >= left:
+        # keep diving the array by the median
+        median = (left + right) / 2
+        if A[median] <= median + 1:
+            right = median - 1
+        elif A[median] > median + 1:
+            left = median + 1
+    ```
+    
+35. > Let `M` be and `n x m` integer matrix in which the entries of each row are sorted in increasing order (from left to right) and the entries in each column are in increasing order (from top to bottom). Give an efficient algorithm to find the position of an integer *x* in *M*, or to determine that *x* is not there. How many comparisons of *x* with matrix entries does your algorithm use in worst case?
+
+    ```python
+    M = [[1,2,3],[4,5,6],[7,8,9]]
+    """
+    1 2 3
+    4 5 6
+    7 8 9
+    """
+    
+    def findX(arr,n,m,X):
+        """
+        n -> number of rows
+        m -> number of cols
+        """
+        # starting from the top corner
+        row = 0, cols = m - 1
+        while (row < n) and (cols >= 0):
+            # check if the value is present
+            if arr[row][cols] == X:
+                return (row,cols)
+            elif arr[row][cols] > X:
+                # shift to the next col
+                cols -= 1
+           	else:
+                row -= 1
+    ```
+
+    This algorithm would take `O(n + m)` time.
+
+36. > Consider an  `n x n` array *A* containing integer elements (positive, negative, and zero). Assume that the elements in each row of *A* are in strictly increasing order, and the elements of each column of *A* are in strictly decreasing order. (Hence there cannot be two zeros in the same row or the same column). Describe an efficient algorithm that counts the number of occurrences of the element `0` in *A*. Analyze its running time.
+
+    ```python
+    A = [[7,8,9],[4,5,6],[-1,0,2]]
+    """
+    7 8 9
+    4 5 6
+    -1 0 2
+    """
+    def findZeroCount(arr, n):
+        rows = n, cols = n
+        zero = 0
+        while (rows >= 0) and (cols > 0):
+            if arr[row][cols] == 0:
+                zero += 1
+                # move to the next row
+                row -= 1
+            elif arr[row][cols] > 0
+            	# columns are arrange in decreasing order
+                cols -= 1
+            else:
+                # move to next row
+                row -= 1
+    ```
+
+37. > Implement versions of several different sorting algorithms, such as selection sort, insertion sort, heap sort, mergesort, and quicksort. Conduct experiments to assess the relative performance of these algorithms in a simple application that reads a large text file and reports exactly one instance of each word that appears within it. This application can be efficiently implemented by sorting all the words that occur in the text and then passing through sorted sequence to identify one instance of each distinct word. Write a brief report with your conclusions.
+
+    
