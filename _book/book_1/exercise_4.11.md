@@ -558,6 +558,8 @@
 
     This algorithm would take `O(n + m)` time.
 
+    #### Implementation Challenges
+
 36. > Consider an  `n x n` array *A* containing integer elements (positive, negative, and zero). Assume that the elements in each row of *A* are in strictly increasing order, and the elements of each column of *A* are in strictly decreasing order. (Hence there cannot be two zeros in the same row or the same column). Describe an efficient algorithm that counts the number of occurrences of the element `0` in *A*. Analyze its running time.
 
     ```python
@@ -584,5 +586,21 @@
     ```
 
 37. > Implement versions of several different sorting algorithms, such as selection sort, insertion sort, heap sort, mergesort, and quicksort. Conduct experiments to assess the relative performance of these algorithms in a simple application that reads a large text file and reports exactly one instance of each word that appears within it. This application can be efficiently implemented by sorting all the words that occur in the text and then passing through sorted sequence to identify one instance of each distinct word. Write a brief report with your conclusions.
+
+    | Algorithm                               |
+    | --------------------------------------- |
+    | [Selection Sort](codes/selectionsort.c) |
+    | [Insertion Sort](codes/insertionsort.c) |
+    | [Quick Sort](codes/quicksort.c)         |
+    
+38. > Implement an external sort, which uses intermediate files to sort files bigger than main memory, merge sort is a good algorithm to base such implementation on. Test your program on files with small records and on files with large records.
+
+    [Implementation of mergesort](codes/mergesort.c)
+
+39. > Design and implement a parallel sorting algorithm that distributes data across several processors. An appropriate variation of mergesort is a likely candidate. Measure the speedup of this algorithm as the number of processors increases. Later, compare the execution time to that of a purerly sequential merge sort implementation. What are your experiences?
+
+    #### Interview Problems
+
+40. > If you are given a million integers to sort, what algorithm would you use to sort them? How much time and memory would that consume?
 
     
