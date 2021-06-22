@@ -595,7 +595,7 @@
     
 38. > Implement an external sort, which uses intermediate files to sort files bigger than main memory, merge sort is a good algorithm to base such implementation on. Test your program on files with small records and on files with large records.
 
-    [Implementation of mergesort](codes/mergesort.c)
+    [Implementation of mergesort](codes/mergesort.py)
 
 39. > Design and implement a parallel sorting algorithm that distributes data across several processors. An appropriate variation of mergesort is a likely candidate. Measure the speedup of this algorithm as the number of processors increases. Later, compare the execution time to that of a purerly sequential merge sort implementation. What are your experiences?
 
@@ -603,4 +603,9 @@
 
 40. > If you are given a million integers to sort, what algorithm would you use to sort them? How much time and memory would that consume?
 
-    
+    Assuming it takes `4 bytes` to store one integer, it would take `4000000 bytes` to store million integers, this would be `4 MB`. A `o(n log n)` algorithm would be fast enough, we can make this even faster by implementing parallel sorting.
+
+41. > Describe advantages and disadvantages of the most popular algorithms
+
+    ​    
+

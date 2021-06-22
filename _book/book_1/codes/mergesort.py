@@ -1,53 +1,52 @@
 """External Sort Algorithm, which sort large files, based on mergesort
 """
-
-def merge(l,r):
-    i = j = k = 0
-
-    while i < len(l) and j < len(r):
-        if l[i] < r[j]:
-            arr[k] = l[i]
-            i += 1
-        else:
-            arr[k] = r[j]
-            j += 1
-        k += 1
-
-    # checking for elements that is left in the arrays
-    while i < len(l):
-        arr[k] = l[i]
-        i += 1
-        k += 1
-
-    while j < len(r):
-        arr[k] = r[j]
-        j += 1
-        k += 1
-
-    return arr
-
-
-def mergesort(arr):
+def mergesort(r):
     """
     desc: sorting algorithm
     args:
         arr -> array
     """
-    if len(arr) > 1:
-        mid = len(arr) // 2
-        leftsubarray = arr[:mid]
-        rightsubarray= arr[mid:]
+    if len(r) > 1:
+        middle = len(r) // 2
+        leftsubarray = r[:middle]
+        rightsubarray= r[middle:]
 
-        l = mergesort(leftsubarray)
-        r = mergesort(rightsubarray)
+        mergesort(leftsubarray)
+        mergesort(rightsubarray)
 
-        return merge(l,r)
+        i = 0
+        j = 0
+        k = 0
+
+        while i < len(leftsubarray) and j < len(rightsubarray):
+            if ord(leftsubarray[i][0]) <  ord(rightsubarray[j][0]):
+                r[k] = leftsubarray[i]
+                i += 1
+            else:
+                r[k] = rightsubarray[j]
+                j += 1
+            k += 1
+
+        # remaning elements
+        while i < len(leftsubarray):
+            r[k] = leftsubarray[i]
+            i += 1
+            k += 1
+
+        while j < len(rightsubarray):
+            r[k] = rightsubarray[j]
+            j += 1
+            k += 1
 
 
 if __name__ == "__main__":
-    arr = [5,6,3,4,5,8]
-    print(arr)
 
-    arr = mergesort(arr)
+    # testing 
+    from teststring import string
+    from re import sub
+    string = sub(r'[^\w\s]',"", string)
+    string = string.split()
 
-    print(arr)
+    mergesort(string)
+
+    print(string)
