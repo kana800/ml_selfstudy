@@ -607,5 +607,53 @@
 
 41. > Describe advantages and disadvantages of the most popular algorithms
 
-    ​    
+    Merge Sort
+    
+    - The running time of merge sort algorithm is `O(n log n)` plus we need extra memory
+    - Merge Sort algorithms are better at handling sequential - accessed lists [ref](https://www.2braces.com/data-structures/merge-sort)
+    
+    Heap Sort
+    
+    - Slow compared to merge sort and quick sort
+    - Can be used for sorting big data 
+    
+    Quick Sort
+    
+    - fast sorting time
+    - slower time in the worst case compared to merge sort 
+    
+    Insertion Sort & Selection Sort
+    
+    - easy implementation
+    - slow compared to other algorithms mentioned above
+    
+42. > Implement and algorithm that takes an input array and returns only the unique elements in it.
 
+    sort the algorithm using merge sort or quick sort `O(n log n)` and iterate through the array (ignore duplicates)
+
+43. > You have a computer with only `2Mb` of the main memory. How do you use it to sort a large file of 500 Mb that is on disk?
+
+    we can use external sorting, we will separate the data into chunks of `2Mb` and store all the sorted data in a heap (or a file) and then after all the chunks are sorted we can sort the main file,
+
+44. > Given a search string of three words, find the smallest snippet of the document that contains all three  of the search words - example , the snippet with smallest number of words in it. You are given the index positions where these words in occur search strings, such as `word1: (1,4,5)`, `word2: (4,9,10)` and `word3:(5,6,15)`. Each of the lists are sorted order, as above.
+
+    Document with different snippets can be on a list, example
+
+    ```python
+    """
+    this is a test message we are going to drink a bottle of water.
+    
+    so we drank the bottle of water
+    """
+    document = ["this is a test message we are going to drink a bottle of water", "so we drank the bottle of water"]
+    ```
+
+    Since the index of position of the search strings  are given we can iterate through the document list while cross checking for the `index pos` in the `word1`, `word2` and `word3`.
+
+45. > Design a stack that supports push, pop and retrieving that minimum element in constant time. Can you do this?
+
+    we cant do this with only one stack in constant time, if there another stack to store minimum this will be possible.
+
+46. > You are given `12` coins. One of them is heavier or lighter than the rest. Identify this coin in just three weighings.
+
+    
