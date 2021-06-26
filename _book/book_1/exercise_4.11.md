@@ -654,6 +654,4 @@
 
     we cant do this with only one stack in constant time, if there another stack to store minimum this will be possible.
 
-46. > You are given `12` coins. One of them is heavier or lighter than the rest. Identify this coin in just three weighings.
-
     
