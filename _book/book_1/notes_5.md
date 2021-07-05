@@ -37,5 +37,33 @@ The below notes are from [mycodeschool](https://www.youtube.com/watch?v=gXgEDyod
 >   - A simple cycle is closed walk, no repetitions other than start and end.
 >   - A graph with no cycle is called [acyclic graph](https://youtu.be/AfYqN3fGapc?t=841).
 
- 
+#### Graph Representation [Edge List](https://www.youtube.com/watch?v=ZdY1Fp9dKzs&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&index=40)
 
+Here will be storing the vertices in an array and edges in an array. For the `edge list` we will need `start vertex` and `end vertex` .
+
+```c
+struct edge{
+    char * startvertex;
+    char * endvertex;
+};
+
+struct edge edgelist[size];
+```
+
+if the graph is weighted we can add `weight` to the structure.
+
+```c
+struct edge{
+    char * startvertex;
+    char * endvertex;
+	int weight;
+};
+```
+
+space complexity for the vertex list would be `O(|v|)`. For the edge list instead of storing character pointers we can store the index of the [character from the vertex list](https://youtu.be/ZdY1Fp9dKzs?list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&t=547). 
+
+- Finding adjacent node to a given node will take us `O(|E|)` time because we need to iterate through the array 
+
+If graph doesn't contain self-loops, If `|v| = n` then `|E| <= n(n - 1)`, Therefore `O(n(n - 1))` would be `O(n^2)`.
+
+ 
