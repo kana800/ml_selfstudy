@@ -66,4 +66,14 @@ space complexity for the vertex list would be `O(|v|)`. For the edge list instea
 
 If graph doesn't contain self-loops, If `|v| = n` then `|E| <= n(n - 1)`, Therefore `O(n(n - 1))` would be `O(n^2)`.
 
- 
+---
+
+The below notes are from [lecture 10](https://www.youtube.com/watch?v=Sjk0xqWWPCc&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=11)
+
+Data Structures for Graphs
+
+- [Adjacency Matrix](https://youtu.be/Sjk0xqWWPCc?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=3539) | [Implementation of Adjacency Matrix]()
+- [Adjacency List](https://youtu.be/Sjk0xqWWPCc?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=3590) | [Implementation of Adjacency List]()
+
+
+
