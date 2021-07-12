@@ -72,8 +72,40 @@ The below notes are from [lecture 10](https://www.youtube.com/watch?v=Sjk0xqWWPC
 
 Data Structures for Graphs
 
-- [Adjacency Matrix](https://youtu.be/Sjk0xqWWPCc?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=3539) | [Implementation of Adjacency Matrix]()
-- [Adjacency List](https://youtu.be/Sjk0xqWWPCc?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=3590) | [Implementation of Adjacency List]()
+- [Adjacency Matrix](https://youtu.be/Sjk0xqWWPCc?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=3539)
+- [Adjacency List](https://youtu.be/Sjk0xqWWPCc?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=3590)
 
+---
 
+The below notes are from [lecture 11](https://www.youtube.com/watch?v=ZTwjXj81NVY&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=11)
 
+**Problem of the Day**
+
+Present correct and efficient algorithms to convert between the following graph data structures, for an undirected graph `G` with `n` vertices and `m` edges. You must give the time complexity of each algorithm.
+
+- convert from an adjacency matrix to adjacency lists
+
+we can iterate through the adjacency matrix row `i` and column `j`. 
+
+```pseudocode
+for i = 1 to N
+	for j = 1 to N
+		if M(i,j) == 1:
+			addegde(i,j)
+```
+
+This will take `O(n^2)` time complexity.
+
+- convert from an adjacency lists to adjacency matrix
+
+```pseudocode
+for i = 1 to N
+	// iterating through the list
+	l = edge(i)
+	// iterating through the nodes of 
+	// the linked list
+	while (l != NULL)
+		M(i, l->next ) = 1
+		// moving to the next node
+		l = l->next;
+```
