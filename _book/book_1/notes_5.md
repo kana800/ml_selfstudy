@@ -96,6 +96,8 @@ for i = 1 to N
 
 This will take `O(n^2)` time complexity.
 
+- cost adding an node to the list would be (`O(n)`) constant time because we are adding it the front of the list
+
 - convert from an adjacency lists to adjacency matrix
 
 ```pseudocode
@@ -109,3 +111,26 @@ for i = 1 to N
 		// moving to the next node
 		l = l->next;
 ```
+
+Time complexity would be `O(n + 2m)` (*`m`*  is the number of edges), there will be outer loop iterating through the list, if there is no edges it would take `O(n)` time.
+
+**Traversing a Graph**
+
+> - For *efficiency*, we must we visit each edge at most twice. For *correctness*, we must do the traversal in a systematic way so that we don't miss anything.
+> - The key idea is that we must mark each vertex when we first visit it, and keep track of what have not yet completely explored. [Each vertex will always be in one of the following three states](https://youtu.be/ZTwjXj81NVY?t=2600)
+>   - undiscovered - the vertex in its initial, virgin state
+>   - discovered - the vertex after we have encountered it, but before we have check out all its incident edges.
+>   - processed - the vertex after we have visited all its incident edges.
+
+> Breadth-first search is appropriate if we are interested in shortest paths on unweighted graphs. For data structures we use two boolean arrays to maintain our knowledge about each vertex in the graph. 
+>
+> A vertex is *discovered* the first time we visit it. A vertex is considered *processed* after we have traversed all outgoing edges from it. Once a vertex is discovered, it is placed on a `FIFO` queue. Thus the oldest vertices / closest to the roots are expanded first. ([link](https://youtu.be/ZTwjXj81NVY?t=2814))
+>
+> ```c
+> bool processed[MAXV + 1];
+> bool discovered[MAXV + 1];
+> int parent[MAXV + 1]; // parent is one who discovered edges
+> ```
+>
+> vertex who discovers another vertex is the parent
+
