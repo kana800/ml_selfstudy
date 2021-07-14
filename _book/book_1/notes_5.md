@@ -133,4 +133,9 @@ Time complexity would be `O(n + 2m)` (*`m`*  is the number of edges), there will
 > ```
 >
 > vertex who discovers another vertex is the parent
-
+>
+> - Time complexity of the [BFS](https://youtu.be/ZTwjXj81NVY?t=3382) : `O(n + m)`
+>
+> **Application of BFS**
+>
+> - [connected components](https://youtu.be/ZTwjXj81NVY?t=4298) of an undirected graph are the separate *pieces* of the graph such that there is no connection between the pieces. BFS can be used to check the number of connected graphs. [algorithm](https://youtu.be/ZTwjXj81NVY?t=4619) | time complexity: `O(n ( n + m))`
