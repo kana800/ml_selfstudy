@@ -139,3 +139,30 @@ Time complexity would be `O(n + 2m)` (*`m`*  is the number of edges), there will
 > **Application of BFS**
 >
 > - [connected components](https://youtu.be/ZTwjXj81NVY?t=4298) of an undirected graph are the separate *pieces* of the graph such that there is no connection between the pieces. BFS can be used to check the number of connected graphs. [algorithm](https://youtu.be/ZTwjXj81NVY?t=4619) | time complexity: `O(n ( n + m))`
+
+---
+
+The below notes are from [lecture 12](https://www.youtube.com/watch?v=KyordYB3BOs&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=13)
+
+> **Two-Coloring Graphs**
+>
+> A graph is *bipartite* if it can be colored without conflicts while using only two colors. Bipartite graphs are important because they arise naturally in many applications and **two-coloring** is the problem of coloring the vertices so that every edge, two end points are different colors.
+>
+> > [How can find if a graph is *bipartite* ?](https://youtu.be/KyordYB3BOs?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=198)
+>
+> - Time complexity of [Two-Coloring graph](https://youtu.be/KyordYB3BOs?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=452) : `O(n + m)`
+
+[**problem of the day**](https://youtu.be/KyordYB3BOs?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=554)
+
+> Prove that in a breadth-first search on a undirected graph *G*, every edge in *G* is either a tree edge or a cross edge, where a cross edge `(x,y)` is an edge where *x* is neither is an ancestor or descendant of *y*.
+
+[**Depth-First Search**](https://youtu.be/KyordYB3BOs?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=1251)
+
+> for DFS, the evolution of the vertices are the same as the BFS it would be
+>
+> ```
+> undiscovered -> discovered -> completely processed
+> ```
+>
+> and we will be using stack (LIFO) as the data structure instead of a queue. To eliminate using stack as a data structure we can use recursion, In a programming language there is stack of records maintained by the runtime system of the programming language.
+
