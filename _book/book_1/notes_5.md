@@ -152,7 +152,7 @@ The below notes are from [lecture 12](https://www.youtube.com/watch?v=KyordYB3BO
 >
 > - Time complexity of [Two-Coloring graph](https://youtu.be/KyordYB3BOs?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=452) : `O(n + m)`
 
-[**problem of the day**](https://youtu.be/KyordYB3BOs?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=554)
+[**Problem of the day**](https://youtu.be/KyordYB3BOs?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=554)
 
 > Prove that in a breadth-first search on a undirected graph *G*, every edge in *G* is either a tree edge or a cross edge, where a cross edge `(x,y)` is an edge where *x* is neither is an ancestor or descendant of *y*.
 
@@ -165,4 +165,22 @@ The below notes are from [lecture 12](https://www.youtube.com/watch?v=KyordYB3BO
 > ```
 >
 > and we will be using stack (LIFO) as the data structure instead of a queue. To eliminate using stack as a data structure we can use recursion, In a programming language there is stack of records maintained by the runtime system of the programming language.
+>
+> [**Edge classification for DFS**](https://youtu.be/KyordYB3BOs?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=2033)
+>
+> Edges can be (*check link above for images*)
+>
+> - Tree Edges
+> - Forward Edges
+> - Back Edges
+> - Cross Edges
+>
+> [In DFS, every edge in the undirected graph is either a tree edge or a back edge](https://youtu.be/KyordYB3BOs?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=2194) 
+>
+> **Application of DFS**
+>
+> > - [Finding Cycles in a graph](https://youtu.be/KyordYB3BOs?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=2358), back edges are the key to find any cycles in an undirected graph. Any back edge going from *x* to an ancestor *y* creates a cycle with the path in the tree from *y* to *x*.  
+> > - [Articulation Vertices](https://youtu.be/KyordYB3BOs?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=2832), is a vertex of a connected graph whose deletion disconnects the graph
+>
+> 
 
