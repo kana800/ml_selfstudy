@@ -181,6 +181,7 @@ The below notes are from [lecture 12](https://www.youtube.com/watch?v=KyordYB3BO
 >
 > > - [Finding Cycles in a graph](https://youtu.be/KyordYB3BOs?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=2358), back edges are the key to find any cycles in an undirected graph. Any back edge going from *x* to an ancestor *y* creates a cycle with the path in the tree from *y* to *x*.  
 > > - [Articulation Vertices](https://youtu.be/KyordYB3BOs?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=2832), is a vertex of a connected graph whose deletion disconnects the graph
+> > - [Topological Sorting](https://youtu.be/KyordYB3BOs?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=3728) of a graph is an ordering on the vertices so that all edges go from left to right. DAGs (Directed Acyclic Graph) has at least one topological sort.
+> >   - Topological sorting is useful in [scheduling jobs](https://youtu.be/KyordYB3BOs?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=3898) in their proper sequence. 
 >
-> 
 
