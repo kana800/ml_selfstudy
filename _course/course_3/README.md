@@ -31,3 +31,4 @@
 
 - 2021-06-04 Finished `what is computation`, `problem set 0`, `problem set 1`
 - 2021-07-04 Finished `problem set 2`
+- 2021-07-21 Completd Half of the `problem set 3`
