@@ -35,3 +35,4 @@
 - 2021-07-04 Finished `problem set 2`
 - 2021-07-21 Completed Half of the `problem set 3`
 - 2021-07-22 Completed `problem set 3`
+- 2021-07-27 Completed `problem set 4` part `a`
