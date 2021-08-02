@@ -14,6 +14,7 @@
 ### Syllabus
 
 - [teachyourselfcs](teachyourselfcs.md)
+- [ossu syallbus](ossu.md)
 
 ### Other Links
 

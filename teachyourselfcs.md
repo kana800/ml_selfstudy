@@ -1,4 +1,4 @@
-#### Teach Yourself CS Syllabus
+#### [Teach Yourself CS Syllabus](https://teachyourselfcs.com/)
 
 - [ ] Algorithms & Data Structures
 
