@@ -23,11 +23,11 @@
 
 ### Problem Set
 
-- [x] Problem Set 0 | [MIT](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/assignments/ps0.zip) | [Answer](codes/ps0.py)
-- [x] Problem Set 1 | [MIT](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/assignments/MIT6_0001F16_ps1.pdf) | [Answer](codes/ps1.py)
+- [x] Problem Set 0 | [MIT](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/assignments/ps0.zip)| [Answer](codes/ps0.py)
+- [x] Problem Set 1 | [MIT](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/assignments/MIT6_0001F16_ps1.pdf)| [Answer](codes/ps1.py)
 - [x] Problem Set 2 | [MIT](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/assignments/index.htm)| [Answer](codes/ps2/hangman.py)
 - [x] Problem Set 3 | [MIT](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/assignments/index.htm)| [Answer](codes/ps3)
-
+- [x] Problem Set 4 | [MIT](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/assignments/index.htm)| [Answer](codes/ps4)
 
 ### Log
 
@@ -36,3 +36,4 @@
 - 2021-07-21 Completed Half of the `problem set 3`
 - 2021-07-22 Completed `problem set 3`
 - 2021-07-27 Completed `problem set 4` part `a`
+- 2021-08-04 Completed `problem set 4` part `c`
