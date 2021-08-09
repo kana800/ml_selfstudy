@@ -93,10 +93,19 @@ class Trigger(object):
 # PHRASE TRIGGERS
 
 # Problem 2
-# TODO: PhraseTrigger
+class PhraseTrigger(Trigger):
+    def __init__(self, phrase):
+        super().__init__()
+        self.phrase = phrase
+
+    def is_phrase_in(self, string):
+        # spliting the string
+        return phrase in string
 
 # Problem 3
-# TODO: TitleTrigger
+class TitleTrigger(PhraseTrigger):
+    def __init__(self,phrase)
+        super().__init__()
 
 # Problem 4
 # TODO: DescriptionTrigger
