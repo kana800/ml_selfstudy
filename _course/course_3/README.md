@@ -37,3 +37,4 @@
 - 2021-07-22 Completed `problem set 3`
 - 2021-07-27 Completed `problem set 4` part `a`
 - 2021-08-04 Completed `problem set 4` part `c`
+- 2021-08-09 Completed `problem set 5` problem `1`
