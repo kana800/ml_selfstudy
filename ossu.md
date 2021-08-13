@@ -2,7 +2,7 @@
 
 ### Introduction to computer science
 
-- [ ] [Introduction to Computer Science and Programming using Python](_course/course_3)
+- [x] [Introduction to Computer Science and Programming using Python](_course/course_3)
 
 ### Core CS
 
