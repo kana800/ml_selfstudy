@@ -6,7 +6,7 @@
 
 ### Core CS
 
-- [ ] How to Code - Simple Data
+- [ ] [How to Code - Simple Data](_course/course_4)
 - [ ] How to Code - Complex Data
 - [ ] Programming Languages, Part A
 - [ ] Programming Languages, Part B
