@@ -3,7 +3,7 @@ I already know the basic of coding, going to breeze through this course
 ### How to Code: Simple Data
 
 - [x] Beginning Student Language
-- [ ] How to Design Functions
+- [x] How to Design Functions
 - [ ] How to Design Data
 - [ ] How to Design Worlds
 - [ ] Compound Data
@@ -19,3 +19,4 @@ I already know the basic of coding, going to breeze through this course
 ### Logs
 
 - 2021-08-09 Completed Beginning Student Language
+- 2021-08-14 Completed How to Design Functions
