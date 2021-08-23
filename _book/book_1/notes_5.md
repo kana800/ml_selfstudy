@@ -185,3 +185,20 @@ The below notes are from [lecture 12](https://www.youtube.com/watch?v=KyordYB3BO
 > >   - Topological sorting is useful in [scheduling jobs](https://youtu.be/KyordYB3BOs?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=3898) in their proper sequence. 
 >
 
+---
+
+The below notes are from [lecture 13](https://www.youtube.com/watch?v=oolm2VnJUKw&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=13)
+
+For topological sorting there is [another algorithm](https://youtu.be/oolm2VnJUKw?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=364), we will be removing **`indegree-0`** nodes (nodes that aren't getting pointed) and keep removing indegree nodes.
+
+[Explaination of the algorithm](https://youtu.be/oolm2VnJUKw?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=440)
+
+[**Problem of the Day**](https://youtu.be/oolm2VnJUKw?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=881)
+
+> Your job is to arrange *n* children in a straight line, facing front. you are given a list of *m* statements of the form `i hates j`. If `i hates j`, then you do not want put *i* somewhere behind *j*, because then *i* is capable of throwing something at *j*.
+>
+> 1. Give an algorithm that orders the line, in `O(n+m)` time.
+> 2. Suppose instead you want to arrange the children in rows, such that if `i hates j` then *i* must be in a lower numbered row than *j*. Give an efficient algorithm to find the minimum number of rows needed, if its possible.
+
+1. We can do a topological sort, given the list of statements `m` we can create a `DAG` about who hate whom. we can reverse the topological sort.
+
