@@ -202,3 +202,12 @@ For topological sorting there is [another algorithm](https://youtu.be/oolm2VnJUK
 
 1. We can do a topological sort, given the list of statements `m` we can create a `DAG` about who hate whom. we can reverse the topological sort.
 
+#### [Spanning Tree & Minimum Spanning Trees](https://www.youtube.com/watch?v=oh3ZOtVix8Y)
+
+- Spanning tree is a graph which contains all vertices with minimum number of edges
+- Minimum spanning tree is a sub graph which has a total weight of the edges to be minimum
+
+[Applications of minimum spanning trees](https://youtu.be/oolm2VnJUKw?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=2168)
+
+> Minimum spanning trees provide a reasonable way for clustering points in space into natural groups, minimum spanning trees are useful in constructing networks, by describing the way to connect a set of sites using the smallest amount of wire.
+
