@@ -211,3 +211,22 @@ For topological sorting there is [another algorithm](https://youtu.be/oolm2VnJUK
 
 > Minimum spanning trees provide a reasonable way for clustering points in space into natural groups, minimum spanning trees are useful in constructing networks, by describing the way to connect a set of sites using the smallest amount of wire.
 
+[Prim's Algorithm](https://youtu.be/oolm2VnJUKw?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=2675)
+
+we check the weight of the each edge and go through the edge with the smallest weight which doesnt create a loop.
+
+```pseudocode
+prim-minimum-spanning-tree(graph):
+	- select an arbitrary vertex s to start the tree from
+	while (there are still non-tree vertices)
+		pick min cost edge between tree/non-tree vertices
+		add selected edge vertex to the tree.
+```
+
+[How Fast is Prim's Algorithm?](https://youtu.be/oolm2VnJUKw?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=3792)
+
+> Algorithm is `O(nm)`,  The while loop will be `O(n)` and the picking of minimum cost edge would be `O(n+m)`, total cost would be `O(n(n+m))`.
+
+[Kurskal's Algorithm](https://youtu.be/oolm2VnJUKw?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&t=4628)
+
+we grab the smallest edge of the graph that doesnt have create a cycle from the whole graph.
