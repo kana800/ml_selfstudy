@@ -17,7 +17,7 @@
 - [ ] Calculus `1A`: Differentiation
 - [ ] Calculus `1B`: Integration
 - [ ] Calculus `1C`: Coordinate Systems & Infinite Series
-- [ ] Mathematics for Computer Science
+- [ ] [Mathematics for Computer Science](_course/course_5)
 
 ### CS Tools
 
